@@ -1,0 +1,287 @@
+.kun-bg {
+    background-image: url('../../assets/img/bg.jpg');
+    background-size: cover;
+    min-height: 700px;
+}
+
+.no-bg {
+    background: none;
+}
+
+.jumbotron {
+    border-radius: 0;
+}
+
+.row-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    margin-right: 0 !important;
+}
+
+.gear-socket {
+    background-image: url('../../assets/img/gear/panel.png');
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card-img-top {
+    height: 15rem;
+    /*    //object-fit: cover;*/
+}
+
+.text-sm {
+    font-size: 10px;
+}
+
+.guards-placeholder {
+    /*max-width:600px;*/
+}
+
+.training-image {
+    max-width: 300px;
+}
+
+.icon-image-small {
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 20px;
+}
+
+.icon-image-small-no-radius {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.kun-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+}
+
+.kun-image-tiny {
+    max-width: 50px;
+    max-height: 56px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.kun-image-small {
+    max-width: 100px;
+    max-height: 112px;
+    border-radius: 6px;
+}
+
+.kun-image-xs {
+    max-width: 75px;
+    max-height: 90px;
+    border-radius: 20px;
+}
+
+.kun-name {
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.kun-power {
+    font-weight: normal;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.kun-name-small {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.kun-power-small {
+    font-weight: normal;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.modal-noframe {
+    background-image: url('../../assets/img/Countrywar_Bg_NoFrame.png');
+    background-size: scale;
+}
+
+.profile-image {
+    max-width: 200px;
+}
+
+.profile-image-small {
+    max-width: 100px;
+}
+
+.gear-image {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.gear-image-small {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.badge-legend {
+    color: #ffffff;
+    font-weight: normal;
+    background-color: #ff8000;
+}
+
+.badge-epic {
+    color: #ffffff;
+    font-weight: normal;
+    background-color: #a335ee;
+}
+
+.badge-rare {
+    color: #ffffff;
+    font-weight: normal;
+    background-color: #0070dd;
+}
+
+.badge-common {
+    color: #ffffff;
+    font-weight: normal;
+    background-color: #039C1F;
+}
+
+.text-selected {
+    color: #ff8000;
+}
+
+.text-legend {
+    color: #ff8000;
+}
+
+.text-epic {
+    color: #a335ee;
+}
+
+.text-rare {
+    color: #0070dd;
+}
+
+.text-common {
+    color: #1eff00;
+}
+
+.text-gold {
+    color: #FFD700;
+}
+
+.text-large {
+    font-size: 20px;
+}
+
+.card-body p {
+    margin-bottom: 1px;
+}
+
+.card-float-right {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.card-float-center {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.border-selected {
+    border: 3px solid #ff8000 !important
+}
+
+.socket-selected {
+    border: 3px solid #ff8000 !important;
+    border-radius: 12px;
+}
+
+.gear-selected {
+    border: 3px solid #ff8000 !important;
+    border-radius: 10px;
+}
+
+.main {
+    max-width: 1024px;
+}
+
+.card {
+    border-width: 0;
+    box-shadow: 2px 2px 2px #343a40;
+}
+
+.kun-card-bg {
+    background-color: #343a40;
+}
+
+.kun-plate-selection {
+    margin-top: 20px;
+}
+
+.sub-title {
+    margin: 10px 0 0 20px; 
+}
+
+.no-shadow {
+    box-shadow: 0px 0px 0px transparent;
+}
+
+.opponentkun-placeholder {
+    max-width: 220px;
+}
+
+.battle-placeholder {
+    max-width: 960px;
+}
+
+.battle-title {
+    margin-top: 20px;
+}
+
+.battle-container, .battle-vs, .battle-end {
+    display: flex;
+    justify-content: center;
+}
+
+.battle-end {
+    justify-content: space-around;
+}
+
+.battle-end a {
+    max-width: 320px;
+}
+
+.vs-img {
+    margin-top: 80px;
+    z-index: 1000;
+}
+
+#buyKun {
+    width: 240px;
+}
+
+.buy-kun-button-in-my-kun {
+    margin-left: 15px;
+}
+
+.winloseresult {
+    position: absolute;
+    top: 80px;
+    transform:rotate(30deg);
+}
+
+.winloseresult.lost {
+    transform:rotate(-30deg);
+}
+
+.btn-feedkun {
+    min-width: 350px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,262 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>【鲲】</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="assets/toastr/toastr.min.css" rel="stylesheet"/>
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/site.css" rel="stylesheet">
+    <link href="assets/css/pet.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="album.css" rel="stylesheet"> -->
+  </head>
+
+  <body class="bg-dark">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">活捉【鲲】</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mykun.html">我【鲲】吞吞吞</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="battle.html">世界【鲲】杀杀杀</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#" id="getPlayerLog">【鲲】志</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://medium.com/@appbery.digital/%E9%B2%B2-d4c3d5dbf2f7" target="_blank">帮助</a>
+            </li>
+          </ul>
+          <div class="float-right">
+             <input type="hidden" id="txtWalletAddress" />
+               <span class="text-white lblCurrentWalletAddress"></span>
+               <span id="divWalletAddress">
+                <button class='btn btn-sm btn-outline-danger btn-login'>登录</button>
+              </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="modal" id="loginModal" tabindex="-3" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bg-dark">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                  <h5 class="card-header bg-transparent text-danger">NAS地址</h5>
+                 <div class="card bg-transparent no-shadow">
+                   <div class="form-group">
+                    <input type="text" class="form-control" id="txtNASAddress" placeholder="n1xxxxxxxxxxxxxxxxxxxxxxxx">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer border-0">
+           <button type="button" class="btn btn-danger btn-confirmaddress">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="viewLogsModal" tabindex="-3" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-noframe">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                  <h5 class="card-header bg-transparent text-danger">【鲲】志</h5>
+                <div class="card bg-transparent no-shadow">
+                  <div class="card-body bg-transparent logs-placeholder">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer border-0">
+           <button type="button" class="btn btn-outline-dark" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="viewKunModal" tabindex="-2" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content  modal-noframe">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <div class="card bg-transparent no-shadow">
+                  <div class="card-body">
+                    <input type='hidden' id='txtKunID' />
+                    <div class="card-body">
+                      <div class="row">
+                         
+                        <div class="col-md-6">
+                          <h2 class='text-danger'>敌【鲲】</h2>
+                          <div class="opponentkun-placeholder">
+                          </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                         <p class='text-center'>请选择最强我【鲲】发起猛烈攻击，战斗中【胜鲲】会吞掉【败鲲】的一部分 NAS 以及战斗力，来吧，Baby！</p>
+                          <button type="button" class="btn btn-danger btn-lg mt-3 btn-attackkun">发动猛烈攻击</button>
+                        </div>
+                      </div>
+                      <div class="row mt-2">
+                         <div class="col-md-6">
+                          <h2 class='text-danger'>我【鲲】</h2>
+                        </div>
+                        </div>
+                      <div class="row mt-2">
+                        <div class="col-md-12">
+                          <input type='hidden' id='txtSelectedKunID' />
+                          <div class="mykuns-placeholder">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">放他一马</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <main role="main">
+
+      <div class="album py-5 bg-light walletRequired" style='display:none;'>
+        <div class="container">
+          <div class="row">
+            <div class="alert alert-primary" role="alert">
+               <a href="https://github.com/ChengOrangeJu/WebExtensionWallet" target="_blank">Nebulas chrome extension</a> is required to play the game.Tutorials can be found on the Github page.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 kun-bg">
+          <div class="col-md-12">
+            <div class="no-bg">
+              <h5 class="card-header text-white">世界【鲲】</h5>
+              <h6 class="sub-title text-white">八荒四海，无鲲不摧，为我独鲲，杀杀杀！</h6>
+              <div class="card-body kuns-placeholder" style="display:block">
+              </div>
+              <input type='hidden' id='txtAttackerID' />
+              <input type='hidden' id='txtDefenderID' />
+              <div class="battle-container">
+                <div class="card-body battle-placeholder" style="display:none;">
+                  <div class="row">
+                    <div class="col-md-5 attacker">
+                    </div>
+                    <div class="col-md-2 text-center status">
+                      <div class="battle-vs">
+                        <img class="vs-img animated infinite wobble" src='assets/img/vs.png' />
+                      </div>
+                    </div>
+                    <div class="col-md-5 defender">
+                    </div>
+                    <div class="battle-end col-md-12" style='display:none'>
+                        <a role="button" href="mykun.html" class="btn mt-3 btn-lg col-md-5 btn-danger">喂养生息᛫日后再战</a>
+                        <div class="col-md-2"></div>
+                        <a role="button" href="battle.html" class="btn mt-3 btn-lg col-md-5 btn-danger">状态正勇᛫找鲲再战</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted footer-dark bg-dark">
+      <div class="container">
+        <p>&copy; 2018 鲲 | 您需要下载并安装<a href="https://github.com/nebulasio/WebExtensionWallet" target="_blank">星云chrome插件</a>.详细安装教程请查阅链接. | Contact: appbery.digital@gmail.com </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="assets/popper.min.js"></script>
+    <script src="assets/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="assets/holder.min.js"></script>
+    <script src="assets/toastr/toastr.min.js"></script>
+    <script src="assets/nebPay.js"></script>
+    <script src="assets/nebulas.js"></script>
+    <script src="assets/js/data.js?t=1527752835"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+
+    $(document).ready(function(){
+        
+        
+        var x = getCookie('nasaddress');
+        if(x)
+        {
+          $('#txtWalletAddress').val(x.toString());
+          $('.lblCurrentWalletAddress').html('<small>玩家钱包: ' + x.toString() + '</small>');
+          initBattle();
+        }
+
+        RegisterEvents();
+        getWallectInfo(function(){
+          initBattle();
+        });
+    });
+    </script>
+
+  </body>
+</html>

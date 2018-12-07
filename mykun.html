@@ -1,0 +1,262 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>【鲲】</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="assets/toastr/toastr.min.css" rel="stylesheet"/>
+    <link href="assets/css/site.css" rel="stylesheet">
+    <link href="assets/css/pet.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-dark">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">活捉【鲲】</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="mykun.html">我【鲲】吞吞吞</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="battle.html">世界【鲲】杀杀杀</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#" id="getPlayerLog">【鲲】志</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://medium.com/@appbery.digital/%E9%B2%B2-d4c3d5dbf2f7" target="_blank">帮助</a>
+            </li>
+          </ul>
+          <div class="float-right">
+             <input type="hidden" id="txtWalletAddress" />
+               <span class="text-white lblCurrentWalletAddress"></span>
+               <span id="divWalletAddress">
+                <button class='btn btn-sm btn-outline-danger btn-login'>登录</button>
+              </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="modal" id="loginModal" tabindex="-3" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bg-dark">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                  <h5 class="card-header bg-transparent text-danger">NAS地址</h5>
+                 <div class="card bg-transparent no-shadow">
+                   <div class="form-group">
+                    <input type="text" class="form-control" id="txtNASAddress" placeholder="n1xxxxxxxxxxxxxxxxxxxxxxxx">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer border-0">
+           <button type="button" class="btn btn-danger btn-confirmaddress">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="modal" id="viewLogsModal" tabindex="-3" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-noframe">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                  <h5 class="card-header bg-transparent text-danger">【鲲】志</h5>
+                <div class="card bg-transparent no-shadow">
+                  <div class="card-body bg-transparent logs-placeholder">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer border-0">
+           <button type="button" class="btn btn-outline-dark" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="viewKunModal" tabindex="-2" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content  modal-noframe">
+          <div class="modal-header border-0">
+            <h5 class="modal-title lblStar"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-0">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <div class="card bg-transparent no-shadow">
+                  <div class="card-body">
+                    <input type='hidden' id='txtKunID' />
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6 kun-placeholder">
+                        </div>
+                        <div class="col-md-6">
+                          <h5 class="text-danger text-center-left">升级全靠吞，弄点 NAS 来喂鲲吧</h5>
+                          <p>
+                            <small>
+                              花费的所有 NAS 将全部增加到鲲的价值中，同时增强鲲的战斗力，流放时系统会把鲲所包含的所有 NAS 价值全部返回给用户。<br/>
+                              战斗结果是根据双方的战斗力来公平计算，战力越大胜率越高。升级全靠吞嘛！<br/>
+                              战斗后输掉的一方将损失一部分价值和战斗力，并且转换到胜者鲲上。<br/>
+                              <b>立刻喂养！</b><br/>
+                            </small>
+                          </p>
+                          <p><span id="lblProtectionLabel" class='text-warning'></span></p>
+                          
+                          <div class='text-white'>
+                            <button type="button" class="btn btn-danger mt-2 mr-1 btn-feedkun" data-type='1'>喂养非洲雄狮<small>(0.01NAS)</small>将提升5至15战斗力</button>
+                            <button type="button" class="btn btn-danger mt-2 mr-1 btn-feedkun" data-type='2'>喂养上古巨莽<small>(0.1NAS)</small>将提升50至150战斗力</button>
+                            <button type="button" class="btn btn-danger mt-2 mr-1 btn-feedkun" data-type='3'>喂养帝王暴龙<small>(1NAS)</small>将提升500至1500战斗力</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">忍心让鲲挨饿，放弃喂养</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="abandonKunModal" tabindex="-2" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content  modal-noframe">
+            <div class="modal-header border-0">
+              <h5 class="modal-title lblStar"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body border-0">
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="card bg-transparent no-shadow">
+                    <div class="card-body">
+                      <input type='hidden' id='txtKunID' />
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6 kun-placeholder">
+                          </div>
+                          <div class="col-md-6">
+                            <h5 class="text-danger text-center-left">流放鲲</h5>
+                            <p class='mt-5'><small>
+                                成功流放鲲后，鲲的当前价值（NAS）将全数返回给玩家。
+                              </small></p>
+                                <button type="button" class="btn btn-danger btn-abandonkun">忍痛流放</button>
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">果断放弃流放</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <main role="main">
+      <div class="album py-5 bg-light walletRequired" style='display:none;'>
+        <div class="container">
+          <div class="row">
+            <div class="alert alert-primary" role="alert">
+               <a href="https://github.com/ChengOrangeJu/WebExtensionWallet" target="_blank">Nebulas chrome extension</a> is required to play the game.Tutorials can be found on the Github page.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 kun-bg">
+          <div class="col-md-12">
+            <div class="no-bg">
+              <h5 class="card-header text-white">我【鲲】</h5>
+              <h6 class="sub-title text-white">上古一条鲲，升级全靠吞，赶紧喂养升级吧！</h6>
+              <div class="card-body kuns-placeholder">
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    <footer class="text-muted footer-dark bg-dark">
+      <div class="container">
+       <p>&copy; 2018 鲲 | 您需要下载并安装<a href="https://github.com/nebulasio/WebExtensionWallet" target="_blank">星云chrome插件</a>.详细安装教程请查阅链接. | Contact: appbery.digital@gmail.com </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="assets/popper.min.js"></script>
+    <script src="assets/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="assets/holder.min.js"></script>
+    <script src="assets/toastr/toastr.min.js"></script>
+    <script src="assets/nebPay.js"></script>
+    <script src="assets/nebulas.js"></script>
+    <script src="assets/js/data.js?t=1527752835"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+
+    $(document).ready(function(){
+        var x = getCookie('nasaddress');
+        if(x)
+        {
+          $('#txtWalletAddress').val(x.toString());
+          $('.lblCurrentWalletAddress').html('<small>玩家钱包: ' + x.toString() + '</small>');
+          initMyKun();
+        }
+        RegisterEvents();
+        
+        getWallectInfo(function(){
+          initMyKun();
+        });
+    });
+    </script>
+
+  </body>
+</html>
